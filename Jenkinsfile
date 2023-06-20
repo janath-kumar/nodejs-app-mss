@@ -34,7 +34,6 @@ sh "docker push janathdocker/nodjsapplication:1"
 
 stage("Deploy Application in K8s Cluster"){
   sh "kubectl apply -f nodejsapplication.yaml"
-    )
 }
 
 }
