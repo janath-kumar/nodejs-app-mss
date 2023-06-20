@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejsapplication
+spec:
+  revisionHistoryLimit: 10
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nodejsapp
+  template:
+    metadata:
+      name: nodejsapppod
+      labels:
+        app: nodejsapp
+    spec:
+      containers:
+        - name: nodejswebappcontainer
+          image: janathdocker/nodjsapplication:1
+          ports:
+            - containerPort: 9981
+          resources:
+            requests:
+              cpu: 200m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejswebappsvc
+spec:
+  selector:
+    app: nodejswebapp
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 8080
