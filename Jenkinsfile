@@ -8,7 +8,7 @@ node
  
  stage("Build")
  {
- nodejs(nodeJSInstallationName: 'nodejs15.2.1') {
+ nodejs(nodeJSInstallationName: 'nodejs20.3.0') {
         sh 'npm install'
     }
  }  
@@ -17,7 +17,7 @@ node
  stage('RunNodeJsApp')
  {
  //sh "./scripts/run.sh"
- nodejs(nodeJSInstallationName: 'nodejs15.2.1') {
+ nodejs(nodeJSInstallationName: 'nodejs20.3.0') {
         sh 'npm start &'
     }
 }    
