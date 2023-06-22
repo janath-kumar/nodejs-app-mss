@@ -19,5 +19,10 @@ stage('RunNodeJsApp')
  nodejs(nodeJSInstallationName: 'nodejs20.3.1') {
         sh 'npm start &'
     }
-}    
+}
+ 
+stage("Build docker Image"){
+   sh "docker build -t janathdocker/nodjsapplication:1."
+}
+ 
 }
