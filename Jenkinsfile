@@ -20,10 +20,4 @@ stage('RunNodeJsApp')
         sh 'npm start &'
     }
 }    
-
-stage("Build docker Image"){
-   sh "docker login -u janathdocker -p Janathkumar@3"
-   sh "docker build -t janathdocker/nodjsapplication:1 ."
-}
- 
 }
