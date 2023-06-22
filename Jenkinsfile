@@ -31,7 +31,7 @@ sh "docker push janathdocker/nodjsapplication:latest"
 
 stage ("Deploy Application in K8s Cluster"){
   kubernetesCLI(
-      kubectl apply -f nodejsapplication.yaml,
+     sh "kubectl apply -f nodejsapplication.yaml",
       kubeconfigID: 'KUBERNETES_CLUSTER_CONFIG'
   )
 }
