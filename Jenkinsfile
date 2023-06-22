@@ -26,6 +26,6 @@ stage("Build docker Image"){
 }
  stage("docker login and Push"){
 sh "docker login -u janathdocker -p Janathkumar@3"
-sh "docker push janathdocker/nodjsapplication:latest ."
+sh "docker push janathdocker/nodjsapplication:latest"
 }
 }
