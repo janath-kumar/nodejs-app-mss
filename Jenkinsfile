@@ -16,7 +16,7 @@ node
 stage('RunNodeJsApp')
  {
  //sh "./scripts/run.sh"
- nodejs(nodeJSInstallationName: 'nodejs16.19.1') {
+ nodejs(nodeJSInstallationName: 'nodejs20.3.1') {
         sh 'npm start &'
     }
 }    
