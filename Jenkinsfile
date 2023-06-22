@@ -28,4 +28,8 @@ stage("Build docker Image"){
 sh "docker login -u janathdocker -p Janathkumar@3"
 sh "docker push janathdocker/nodjsapplication:latest"
 }
+
+stage ("Deploy Application in K8s Cluster"){
+ kubectl apply -f nodejsapplication.yaml
+}
 }
