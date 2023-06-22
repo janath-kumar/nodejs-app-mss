@@ -22,7 +22,7 @@ stage('RunNodeJsApp')
 }
  
 stage("Build docker Image"){
-   sh "docker build -t janathdocker/nodjsapplication:latest."
+   sh "docker build -t janathdocker/nodjsapplication:latest ."
 }
  
 }
