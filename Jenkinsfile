@@ -25,7 +25,7 @@ stage("Build docker Image"){
    sh "docker build -t janathdocker/nodjsapplication:latest ."
 }
  stage("docker login and Push"){
-withCredentials([string(credentialsId: 'Docker_Hub_passwd', variable: '')])
+withCredentials([string(credentialsId: 'Docker_Hub_passwd', variable: 'Docker_Hub_passwd')])  
 sh "docker login -u janathdocker -p ${Docker_Hub_passwd}"
 sh "docker push janathdocker/nodjsapplication:latest ."
 }
