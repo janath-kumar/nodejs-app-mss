@@ -1,6 +1,5 @@
 node
 {
- #def buildNumber = BUILD_NUMBER
  
   stage("CheckOutCodeGit")
   {
