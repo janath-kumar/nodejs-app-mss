@@ -29,3 +29,4 @@ withCredentials([string(credentialsId: 'Docker_Hub_passwd', variable: '')])
 sh "docker login -u janathdocker -p ${Docker_Hub_passwd}"
 sh "docker push janathdocker/nodjsapplication:latest ."
 }
+}
