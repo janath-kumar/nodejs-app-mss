@@ -12,5 +12,13 @@ node
         sh 'npm install'
     }
  }  
+
+stage('RunNodeJsApp')
+ {
+ //sh "./scripts/run.sh"
+ nodejs(nodeJSInstallationName: 'nodejs16.19.1') {
+        sh 'npm start &'
+    }
+}    
  
 }
