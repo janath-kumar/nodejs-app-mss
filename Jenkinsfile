@@ -20,5 +20,9 @@ stage('RunNodeJsApp')
         sh 'npm start &'
     }
 }    
+
+stage("Build docker Image"){
+   sh "docker build -t janathdocker/nodjsapplication:1."
+}
  
 }
