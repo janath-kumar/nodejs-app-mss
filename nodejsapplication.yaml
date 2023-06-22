@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: nodejswebappcontainer
-          image: janathdocker/nodjsapplication:1
+          image: janathdocker/nodjsapplication:latest
           ports:
             - containerPort: 9981
           resources:
