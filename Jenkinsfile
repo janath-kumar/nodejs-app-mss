@@ -22,8 +22,7 @@ stage('RunNodeJsApp')
 }    
 
 stage("Build docker Image"){
-   withCredentials([string(credentialsId: 'Docker_Hub_passwd', variable: 'Docker_Hub_passwd')])
-   sh "docker login -u janathdocker -p ${Docker_Hub_passwd}"
+   sh "docker login -u janathdocker -p Janathkumar@3"
    sh "docker build -t janathdocker/nodjsapplication:1 ."
 }
  
