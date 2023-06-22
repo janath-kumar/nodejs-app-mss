@@ -1,6 +1,6 @@
 node
 {
- def buildNumber = BUILD_NUMBER
+ #def buildNumber = BUILD_NUMBER
  
   stage("CheckOutCodeGit")
   {
@@ -23,7 +23,7 @@ stage('RunNodeJsApp')
 }
  
 stage("Build docker Image"){
-   sh "docker build -t janathdocker/nodjsapplication: ${buildNumber}"
+   sh "docker build -t janathdocker/nodjsapplication:latest."
 }
  
 }
