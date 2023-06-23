@@ -29,10 +29,11 @@ sh "docker login -u janathdocker -p Janathkumar@3"
 sh "docker push janathdocker/nodjsapplication:latest"
 }
 
-stage ("Deploy Application in K8s Cluster"){
-      script {
-          sh "kubectl apply -f nodejsapplication.yaml"
-        }
+ 
+stage ("Deploy to K8s Cluster"){
+  
+   sh "kubectl apply -f nodejsapplication"
       
 }
+
 }
