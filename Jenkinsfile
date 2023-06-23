@@ -31,8 +31,7 @@ sh "docker push janathdocker/nodjsapplication:latest"
 
 stage ("Deploy Application in K8s Cluster"){
       script {
-          sh "sed -i 's,TEST_IMAGE_NAME,janathdocker/nodejsapplication:latest,' nodejsapplication.yaml"
-          sh "cat nodejsapplication.yaml"
+          withCredentials([file(credentialsId: 'KUBERNETES_CLUSTER_CONFIG2', variable: 'KUBE_CONFIG')])
           sh "kubectl apply -f nodejsapplication.yaml"
         }
       
