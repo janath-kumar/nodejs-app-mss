@@ -33,8 +33,7 @@ stage ("Deploy Application in K8s Cluster"){
       script {
           sh "sed -i 's,TEST_IMAGE_NAME,janathdocker/nodejsapplication:latest,' nodejsapplication.yaml"
           sh "cat nodejsapplication.yaml"
-          sh "kubectl --kubeconfig=/home/ec2-user/config get pods"
-          sh "kubectl --kubeconfig=/home/ec2-user/config apply -f nodejsapplication.yaml"
+          sh "kubectl apply -f nodejsapplication.yaml"
         }
       
 }
